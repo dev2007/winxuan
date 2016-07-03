@@ -1,0 +1,10 @@
+D:\WorkSpaces\Winxuan\Winxuan.Data\bin\Debug\Winxuan.Data.dll.config
+D:\WorkSpaces\Winxuan\Winxuan.Data\bin\Debug\Winxuan.Data.dll
+D:\WorkSpaces\Winxuan\Winxuan.Data\bin\Debug\Winxuan.Data.pdb
+D:\WorkSpaces\Winxuan\Winxuan.Data\bin\Debug\EntityFramework.dll
+D:\WorkSpaces\Winxuan\Winxuan.Data\bin\Debug\EntityFramework.SqlServer.dll
+D:\WorkSpaces\Winxuan\Winxuan.Data\bin\Debug\EntityFramework.xml
+D:\WorkSpaces\Winxuan\Winxuan.Data\bin\Debug\EntityFramework.SqlServer.xml
+D:\WorkSpaces\Winxuan\Winxuan.Data\obj\Debug\Winxuan.Data.csprojResolveAssemblyReference.cache
+D:\WorkSpaces\Winxuan\Winxuan.Data\obj\Debug\Winxuan.Data.dll
+D:\WorkSpaces\Winxuan\Winxuan.Data\obj\Debug\Winxuan.Data.pdb

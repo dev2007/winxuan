@@ -1,0 +1,13 @@
+D:\WorkSpaces\Winxuan\Winxuan.Client\bin\Debug\Winxuan.Client.exe.config
+D:\WorkSpaces\Winxuan\Winxuan.Client\bin\Debug\Winxuan.Client.exe
+D:\WorkSpaces\Winxuan\Winxuan.Client\bin\Debug\Winxuan.Client.pdb
+D:\WorkSpaces\Winxuan\Winxuan.Client\obj\Debug\Winxuan.Client.csprojResolveAssemblyReference.cache
+D:\WorkSpaces\Winxuan\Winxuan.Client\obj\Debug\MainWindow.baml
+D:\WorkSpaces\Winxuan\Winxuan.Client\obj\Debug\MainWindow.g.cs
+D:\WorkSpaces\Winxuan\Winxuan.Client\obj\Debug\App.g.cs
+D:\WorkSpaces\Winxuan\Winxuan.Client\obj\Debug\Winxuan.Client_MarkupCompile.cache
+D:\WorkSpaces\Winxuan\Winxuan.Client\obj\Debug\Winxuan.Client.g.resources
+D:\WorkSpaces\Winxuan\Winxuan.Client\obj\Debug\Winxuan.Client.Properties.Resources.resources
+D:\WorkSpaces\Winxuan\Winxuan.Client\obj\Debug\Winxuan.Client.csproj.GenerateResource.Cache
+D:\WorkSpaces\Winxuan\Winxuan.Client\obj\Debug\Winxuan.Client.exe
+D:\WorkSpaces\Winxuan\Winxuan.Client\obj\Debug\Winxuan.Client.pdb

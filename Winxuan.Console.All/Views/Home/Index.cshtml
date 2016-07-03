@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@*<p>@ViewBag.User.ID</p>
+<p>@ViewBag.User.UserName</p>*@
+<form action="http://localhost:64181/api/File" method="post" enctype="multipart/form-data">
+    <input type="file" id="file1" name="file1" multiple="multiple"/>
+    <input type="submit" value="Submit"/>
+</form>
+
+<form action="http://localhost:64181/api/login" method="post">
+    <input type="text" name="username"/>
+    <input type="text" name="password"/>
+    <input type="submit" value="Submit"/>
+</form>
