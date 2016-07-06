@@ -1,0 +1,1 @@
+﻿REPLACE INTO [Users](Name,UserName,[Password]) VALUES('admin','admin','password+2007')

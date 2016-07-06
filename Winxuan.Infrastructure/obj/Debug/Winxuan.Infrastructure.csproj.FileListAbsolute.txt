@@ -3,3 +3,9 @@ D:\WorkSpaces\Winxuan\Winxuan.Infrastructure\bin\Debug\Winxuan.Infrastructure.pd
 D:\WorkSpaces\Winxuan\Winxuan.Infrastructure\obj\Debug\Winxuan.Infrastructure.csprojResolveAssemblyReference.cache
 D:\WorkSpaces\Winxuan\Winxuan.Infrastructure\obj\Debug\Winxuan.Infrastructure.dll
 D:\WorkSpaces\Winxuan\Winxuan.Infrastructure\obj\Debug\Winxuan.Infrastructure.pdb
+D:\WorkSpaces\Winxuan\Winxuan.Infrastructure\bin\Debug\Newtonsoft.Json.dll
+D:\WorkSpaces\Winxuan\Winxuan.Infrastructure\bin\Debug\Newtonsoft.Json.xml
+D:\WorkSpaces\Winxuan\Winxuan.Infrastructure\bin\Debug\Winxuan.Data.dll
+D:\WorkSpaces\Winxuan\Winxuan.Infrastructure\bin\Debug\EntityFramework.dll
+D:\WorkSpaces\Winxuan\Winxuan.Infrastructure\bin\Debug\Winxuan.Data.pdb
+D:\WorkSpaces\Winxuan\Winxuan.Infrastructure\bin\Debug\EntityFramework.xml

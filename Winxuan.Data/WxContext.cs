@@ -8,15 +8,12 @@ using Winxuan.Data.Model;
 
 namespace Winxuan.Data
 {
-    public class WxContext : DbContext
+    public class WxContext : WxBaseContext
     {
         public WxContext()
             : base("WxContext")
         {
 
         }
-        public DbSet<User> Users { get; set; }
-
-        public DbSet<UserSecurity> UserSecurities { get; set; }
     }
 }

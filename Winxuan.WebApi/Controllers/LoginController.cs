@@ -13,9 +13,15 @@ using Winxuan.Service.Interfaces;
 
 namespace Winxuan.WebApi.Controllers
 {
-    public class LoginController : ApiController
+    public class LoginController : BaseApiController
     {
-        private IAccountService service = new AccountService(new WxContext());
+        private IAccountService service = new AccountService(context);
+
+        /// <summary>
+        /// Post for login.
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
         public async Task<string> Post([FromBody]LoginDTO model)
         {
             return await service.Login(model);

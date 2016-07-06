@@ -23,6 +23,9 @@ namespace Winxuan.Web
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                         "~/Scripts/modernizr-*"));
 
+            //bootstrap js
+            bundles.Add(new ScriptBundle("~/bundles/bootstrapjs").Include("~/Scripts/bootstrap.*"));
+
             bundles.Add(new StyleBundle("~/Content/css").Include("~/Content/site.css"));
 
             bundles.Add(new StyleBundle("~/Content/themes/base/css").Include(
@@ -38,6 +41,11 @@ namespace Winxuan.Web
                         "~/Content/themes/base/jquery.ui.datepicker.css",
                         "~/Content/themes/base/jquery.ui.progressbar.css",
                         "~/Content/themes/base/jquery.ui.theme.css"));
+
+            //bootstrap css
+            bundles.Add(new StyleBundle("~/Content/bootstrap").Include(
+                    "~/Content/bootstrap.css",
+                    "~/Content/bootstrap-theme.css"));
         }
     }
 }

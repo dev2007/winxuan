@@ -1,5 +1,133 @@
-﻿@{
-    ViewBag.Title = "Index";
+﻿@Model Winxuan.Web.Models.UserViewModel
+@{
+    Layout = null;
 }
 
-<h2>Index</h2>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrapjs")
+    @Styles.Render("~/Content/bootstrap")
+    <style type="text/css">
+        /* Sticky footer styles
+        -------------------------------------------------- */
+        html {
+            position: relative;
+            min-height: 100%;
+        }
+
+        body {
+            /* Margin bottom by footer height */
+            margin-bottom: 60px;
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            /* Set the fixed height of the footer here */
+            height: 60px;
+            background-color: #f5f5f5;
+        }
+
+        /* Custom page CSS
+        -------------------------------------------------- */
+        /* Not required for template or sticky footer method. */
+
+        body > .container {
+            padding: 60px 15px 0;
+        }
+
+        .container .text-muted {
+            margin: 20px 0;
+        }
+
+        .footer > .container {
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+
+        code {
+            font-size: 80%;
+        }
+    </style>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#dashboard").hide();
+
+            //login
+            $("#loginbtn").on("click", function () {
+                var userName = $("#username").val();
+                var password = $("#password").val();
+                if (userName == "") {
+                    $("#loginbtn").focus();
+                    alert("请输入用户名");
+                } else if (password == "") {
+                    $("#password").focus();
+                    alert("请输入密码");
+                }
+                $.post("/Home/Login", { username: userName, password: password }, function (result) {
+                    var v = eval(result);
+                    if (!v.State) {
+                        alert(v.ErrorMsg);
+                    } else {
+                        //TODO 
+                        $("#loginform").hide();
+                        $("#dashboard").show();
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <!--navgation bar-->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">组文件</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#" id="dashboard">个人中心</a></li>
+                    <li><a href="#">帮&nbsp;&nbsp;助</a></li>
+                </ul>
+                @if (Model == null)
+                {
+                    <form class="navbar-form navbar-right" id="loginform">
+                        <input type="text" class="form-control" placeholder="用户名" id="username">
+                        <input type="password" class="form-control" placeholder="密码" id="password">
+                        <button type="button" class="btn btn-default" id="loginbtn">登&nbsp;&nbsp;录</button>
+                        <button type="button" class="btn btn-success">注&nbsp;&nbsp;册</button>
+                    </form>
+                }
+            </div>
+        </div>
+    </nav>
+    <!--body content-->
+    <div class="container" id="body">
+        @Html.Partial("PartialMain")
+    </div>
+    <!--footer content-->
+    <footer class="footer">
+        <div class="container">
+            <p class="text-muted">&copy;2016 Awu.All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
+
+

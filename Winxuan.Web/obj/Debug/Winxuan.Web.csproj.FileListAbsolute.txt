@@ -30,3 +30,7 @@ D:\WorkSpaces\Winxuan\Winxuan.Web\bin\System.Web.WebPages.Razor.xml
 D:\WorkSpaces\Winxuan\Winxuan.Web\obj\Debug\Winxuan.Web.csprojResolveAssemblyReference.cache
 D:\WorkSpaces\Winxuan\Winxuan.Web\obj\Debug\Winxuan.Web.dll
 D:\WorkSpaces\Winxuan\Winxuan.Web\obj\Debug\Winxuan.Web.pdb
+D:\WorkSpaces\Winxuan\Winxuan.Web\bin\Winxuan.Infrastructure.dll
+D:\WorkSpaces\Winxuan\Winxuan.Web\bin\Winxuan.Infrastructure.pdb
+D:\WorkSpaces\Winxuan\Winxuan.Web\bin\Winxuan.Data.dll
+D:\WorkSpaces\Winxuan\Winxuan.Web\bin\Winxuan.Data.pdb

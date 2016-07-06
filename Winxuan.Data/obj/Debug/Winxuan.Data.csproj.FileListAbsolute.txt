@@ -8,3 +8,7 @@ D:\WorkSpaces\Winxuan\Winxuan.Data\bin\Debug\EntityFramework.SqlServer.xml
 D:\WorkSpaces\Winxuan\Winxuan.Data\obj\Debug\Winxuan.Data.csprojResolveAssemblyReference.cache
 D:\WorkSpaces\Winxuan\Winxuan.Data\obj\Debug\Winxuan.Data.dll
 D:\WorkSpaces\Winxuan\Winxuan.Data\obj\Debug\Winxuan.Data.pdb
+D:\WorkSpaces\Winxuan\Winxuan.Data\bin\Debug\System.Data.SQLite.dll
+D:\WorkSpaces\Winxuan\Winxuan.Data\bin\Debug\System.Data.SQLite.EF6.dll
+D:\WorkSpaces\Winxuan\Winxuan.Data\bin\Debug\System.Data.SQLite.Linq.dll
+D:\WorkSpaces\Winxuan\Winxuan.Data\bin\Debug\System.Data.SQLite.xml

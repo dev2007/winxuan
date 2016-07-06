@@ -9,6 +9,8 @@ namespace Winxuan.Service.Interfaces
 {
     public interface IAccountService
     {
+        Task<string> Registe(RegisteDTO register);
         Task<string> Login(LoginDTO login);
+        Task<string> Logout(string userName);
     }
 }

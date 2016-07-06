@@ -12,8 +12,8 @@ namespace Winxuan.Service
     /// </summary>
     public class BaseService
     {
-        protected WxContext context = null;
-        public BaseService(WxContext context)
+        protected WxBaseContext context = null;
+        public BaseService(WxBaseContext context)
         {
             this.context = context;
         }

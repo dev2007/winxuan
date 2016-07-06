@@ -30,8 +30,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -40,7 +46,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DTO\LoginDTO.cs" />
+    <Compile Include="DTO\RegisteDTO.cs" />
+    <Compile Include="DTO\ResponseJson.cs" />
+    <Compile Include="Filters\AccountAuthorizeAttribute.cs" />
+    <Compile Include="LoginSys.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserLoginCache.cs" />
+    <Compile Include="Utils.cs" />
+    <Compile Include="WebUtils.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Winxuan.Data\Winxuan.Data.csproj">
+      <Project>{afa45b75-c83d-49bb-8108-7d8b2d965352}</Project>
+      <Name>Winxuan.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
