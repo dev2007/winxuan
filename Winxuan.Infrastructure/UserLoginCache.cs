@@ -80,6 +80,17 @@ namespace Winxuan.Infrastructure
                 return new LoginUserInfo();
             return store[token];
         }
+
+        /// <summary>
+        /// Get user id by login token.
+        /// </summary>
+        /// <param name="token"></param>
+        /// <returns></returns>
+        public static int CurrentUserId(string token)
+        {
+            LoginUserInfo info = FindUser(token);
+            return info.ID;
+        }
     }
 
     /// <summary>

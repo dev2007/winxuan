@@ -11,7 +11,8 @@ namespace Winxuan.Service.Interfaces
     {
         Task<string> GetUserTeams(int userId);
         Task<string> GetTeam(int teamId);
+        Task<string> CreateTeam(TeamDTO team);
         Task<string> UpdateTeam(TeamDTO team);
-        Task<string> DeleteTeam(TeamDTO team);
+        Task<string> DeleteTeam(int teamId);
     }
 }

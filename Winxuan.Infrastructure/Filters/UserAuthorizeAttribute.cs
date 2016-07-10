@@ -19,16 +19,17 @@ namespace Winxuan.Infrastructure.Filters
         /// <param name="actionContext"></param>
         public override void OnActionExecuting(HttpActionContext actionContext)
         {
-            string authToken = WebUtils.GetAuthToken(actionContext.Request); 
+            //TODO 开发阶段关闭校验
+            //string authToken = WebUtils.GetAuthToken(actionContext.Request); 
 
-            if (string.IsNullOrEmpty(authToken))
-            {
-                Restrict(actionContext);
-            }
-            else if (!UserLoginCache.IsLogin(authToken))
-            {
-                Restrict(actionContext);
-            }
+            //if (string.IsNullOrEmpty(authToken))
+            //{
+            //    Restrict(actionContext);
+            //}
+            //else if (!UserLoginCache.IsLogin(authToken))
+            //{
+            //    Restrict(actionContext);
+            //}
         }
 
         /// <summary>

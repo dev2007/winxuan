@@ -188,7 +188,7 @@
     <Compile Include="Controllers\LogoutController.cs" />
     <Compile Include="Controllers\RegisteController.cs" />
     <Compile Include="Controllers\TeamController.cs" />
-    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

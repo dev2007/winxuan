@@ -110,6 +110,15 @@ namespace Winxuan.Infrastructure
             request.Headers.Add("AuthToken", authToken);
         }
 
+        /// <summary>
+        /// Get current user id.
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        public static int CurrentUserId(HttpRequestMessage request)
+        {
+            return UserLoginCache.CurrentUserId(GetAuthToken(request));
+        }
     }
 
 

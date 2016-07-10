@@ -8,10 +8,14 @@ namespace Winxuan.Infrastructure.DTO
 {
     public class TeamDTO
     {
-        public int TeamId { get; set; }
+        public int Id { get; set; }
+
+        public string TeamName { get; set; }
 
         public string TeamDescription { get; set; }
 
-        public IDictionary<int, UserDTO> Users { get; set; }
+        public int CreatorId { get; set; }
+
+        public string CreatorName { get; set; }
     }
 }
