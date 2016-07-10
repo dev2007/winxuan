@@ -1,0 +1,99 @@
+﻿@{
+    ViewBag.Title = "注册";
+}
+
+<style type="text/css">
+    body {
+        padding-top: 40px;
+        padding-bottom: 40px;
+        background-color: #eee;
+    }
+
+    .form-signin {
+        max-width: 330px;
+        padding: 15px;
+        margin: 0 auto;
+    }
+
+        .form-signin .form-signin-heading,
+        .form-signin .checkbox {
+            margin-bottom: 10px;
+        }
+
+        .form-signin .checkbox {
+            font-weight: normal;
+        }
+
+        .form-signin .form-control {
+            position: relative;
+            height: auto;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+            .form-signin .form-control:focus {
+                z-index: 2;
+            }
+
+        .form-signin input[type="text"] {
+            margin-bottom: -1px;
+            border-bottom-right-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+
+        .form-signin input[id="repassword"] {
+            margin-bottom: 10px;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+        }
+</style>
+
+<script>
+    $(document).ready(function () {
+
+        $("button[id='submit']").on("click", function () {
+            var username = $("#username").val();
+            var name = $("#name").val();
+            var password = $("#password").val();
+            var repassword = $("#repassword").val();
+            if (username == "") {
+                alert("用户名为空");
+                return;
+            } else if (name == "") {
+                alert("昵称/真实姓名为空");
+                return;
+            } else if (password == "") {
+                alert("密码为空");
+                return;
+            } else if (repassword == "") {
+                alert("重复密码为空");
+                return;
+            }
+
+            $.post("/Home/Registe", { username: username, name: name, password: password, repassword: repassword }, function (result) {
+                var v = eval(result);
+                if (!v.State) {
+                    alert(v.ErrorMsg);
+                } else {
+                    window.location.href = "/Home/Index";
+                }
+            })
+        });
+    });
+</script>
+
+<form class="form-signin" method="post">
+    <h2 class="form-signin-heading">注册</h2>
+    <label for="inputUserName" class="sr-only">用户名</label>
+    <input type="text" id="username" name="username" class="form-control" placeholder="用户名">
+    <label for="inputName" class="sr-only">昵称/真实姓名</label>
+    <input type="text" id="name" name="name" class="form-control" placeholder="昵称/真实姓名">
+    <label for="inputPassword" class="sr-only">密码</label>
+    <input type="password" id="password" name="password" class="form-control" placeholder="密码">
+    <label for="inputPassword2" class="sr-only">再次输入密码</label>
+    <input type="password" id="repassword" name="repassword" class="form-control" placeholder="再次输入密码">
+    <button class="btn btn-lg btn-primary btn-block" type="button" id="submit">注册</button>
+</form>

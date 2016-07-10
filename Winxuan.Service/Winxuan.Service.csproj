@@ -54,9 +54,10 @@
   <ItemGroup>
     <Compile Include="BaseService.cs" />
     <Compile Include="Impl\AccountService.cs" />
+    <Compile Include="Impl\TeamService.cs" />
     <Compile Include="Interfaces\IAccountService.cs" />
+    <Compile Include="Interfaces\ITeamService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Response.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Winxuan.Data\Winxuan.Data.csproj">

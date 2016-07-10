@@ -9,3 +9,7 @@ D:\WorkSpaces\Winxuan\Winxuan.Infrastructure\bin\Debug\Winxuan.Data.dll
 D:\WorkSpaces\Winxuan\Winxuan.Infrastructure\bin\Debug\EntityFramework.dll
 D:\WorkSpaces\Winxuan\Winxuan.Infrastructure\bin\Debug\Winxuan.Data.pdb
 D:\WorkSpaces\Winxuan\Winxuan.Infrastructure\bin\Debug\EntityFramework.xml
+D:\WorkSpaces\Winxuan\Winxuan.Infrastructure\bin\Debug\System.Web.Http.dll
+D:\WorkSpaces\Winxuan\Winxuan.Infrastructure\bin\Debug\System.Net.Http.Formatting.dll
+D:\WorkSpaces\Winxuan\Winxuan.Infrastructure\bin\Debug\System.Web.Http.xml
+D:\WorkSpaces\Winxuan\Winxuan.Infrastructure\bin\Debug\System.Net.Http.Formatting.xml

@@ -34,3 +34,5 @@ D:\WorkSpaces\Winxuan\Winxuan.Web\bin\Winxuan.Infrastructure.dll
 D:\WorkSpaces\Winxuan\Winxuan.Web\bin\Winxuan.Infrastructure.pdb
 D:\WorkSpaces\Winxuan\Winxuan.Web\bin\Winxuan.Data.dll
 D:\WorkSpaces\Winxuan\Winxuan.Web\bin\Winxuan.Data.pdb
+D:\WorkSpaces\Winxuan\Winxuan.Web\bin\EntityFramework.SqlServer.dll
+D:\WorkSpaces\Winxuan\Winxuan.Web\bin\EntityFramework.SqlServer.xml

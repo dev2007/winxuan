@@ -1,7 +1,6 @@
 D:\WorkSpaces\Winxuan\Winxuan.Client\bin\Debug\Winxuan.Client.exe.config
 D:\WorkSpaces\Winxuan\Winxuan.Client\bin\Debug\Winxuan.Client.exe
 D:\WorkSpaces\Winxuan\Winxuan.Client\bin\Debug\Winxuan.Client.pdb
-D:\WorkSpaces\Winxuan\Winxuan.Client\obj\Debug\Winxuan.Client.csprojResolveAssemblyReference.cache
 D:\WorkSpaces\Winxuan\Winxuan.Client\obj\Debug\MainWindow.baml
 D:\WorkSpaces\Winxuan\Winxuan.Client\obj\Debug\MainWindow.g.cs
 D:\WorkSpaces\Winxuan\Winxuan.Client\obj\Debug\App.g.cs

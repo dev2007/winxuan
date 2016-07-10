@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
 using Winxuan.Data;
+using Winxuan.Infrastructure;
 using Winxuan.Infrastructure.DTO;
 using Winxuan.Service;
 using Winxuan.Service.Impl;
@@ -24,6 +25,7 @@ namespace Winxuan.WebApi.Controllers
         /// <returns></returns>
         public async Task<string> Post([FromBody]LoginDTO model)
         {
+            model.AuthToken = WebUtils.GetAuthToken(Request);
             return await service.Login(model);
         }
     }

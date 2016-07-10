@@ -31,6 +31,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastru
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Winxuan.Infrastructure", "Winxuan.Infrastructure\Winxuan.Infrastructure.csproj", "{AE2112AC-8B37-4DEC-BDB2-69CFAC40E92E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Winxuan.Infrastructure.Test", "Winxuan.Infrastructure.Test\Winxuan.Infrastructure.Test.csproj", "{601023A8-5986-4111-A342-207BD6EAABC5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,10 @@ Global
 		{AE2112AC-8B37-4DEC-BDB2-69CFAC40E92E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AE2112AC-8B37-4DEC-BDB2-69CFAC40E92E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AE2112AC-8B37-4DEC-BDB2-69CFAC40E92E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{601023A8-5986-4111-A342-207BD6EAABC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{601023A8-5986-4111-A342-207BD6EAABC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{601023A8-5986-4111-A342-207BD6EAABC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{601023A8-5986-4111-A342-207BD6EAABC5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -82,5 +88,6 @@ Global
 		{AFA45B75-C83D-49BB-8108-7D8B2D965352} = {24D38ED6-C960-43D7-8A30-3733776D41C6}
 		{D6603D1E-F0B7-42A8-B241-4A2DFCE39B09} = {4BFA2BAA-7EA1-4D44-99F7-EC539B9638BE}
 		{AE2112AC-8B37-4DEC-BDB2-69CFAC40E92E} = {F6CA051F-9BE2-4666-9F9C-D219D02D72B6}
+		{601023A8-5986-4111-A342-207BD6EAABC5} = {F6CA051F-9BE2-4666-9F9C-D219D02D72B6}
 	EndGlobalSection
 EndGlobal

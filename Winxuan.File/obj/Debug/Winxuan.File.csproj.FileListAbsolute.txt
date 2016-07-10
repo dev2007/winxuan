@@ -5,6 +5,5 @@ D:\WorkSpaces\Winxuan\Winxuan.File\bin\Debug\System.Web.Http.dll
 D:\WorkSpaces\Winxuan\Winxuan.File\bin\Debug\Newtonsoft.Json.dll
 D:\WorkSpaces\Winxuan\Winxuan.File\bin\Debug\System.Net.Http.Formatting.xml
 D:\WorkSpaces\Winxuan\Winxuan.File\bin\Debug\System.Web.Http.xml
-D:\WorkSpaces\Winxuan\Winxuan.File\obj\Debug\Winxuan.File.csprojResolveAssemblyReference.cache
 D:\WorkSpaces\Winxuan\Winxuan.File\obj\Debug\Winxuan.File.dll
 D:\WorkSpaces\Winxuan\Winxuan.File\obj\Debug\Winxuan.File.pdb

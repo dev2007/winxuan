@@ -17,5 +17,11 @@ namespace Winxuan.Data
         }
 
         public DbSet<User> Users { get; set; }
+
+        public DbSet<Team> Teams { get; set; }
+
+        public DbSet<TeamWithUser> TeamWithUsers { get; set; }
+
+        public DbSet<UserRole> UserRoles { get; set; }
     }
 }

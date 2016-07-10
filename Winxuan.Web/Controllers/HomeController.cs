@@ -12,37 +12,99 @@ namespace Winxuan.Web.Controllers
 {
     public class HomeController : BaseController
     {
-        //
-        // GET: /Home/
-
+        /// <summary>
+        /// Index page.
+        /// </summary>
+        /// <returns></returns>
         public ActionResult Index()
         {
-            HttpCookie cookie = Request.Cookies["authtoken"];
-            if (cookie != null)
+            string cookie = GetCookieToken();
+            if (!string.IsNullOrEmpty(cookie))
             {
-                if (cookie.Expires <= DateTime.Now.ToUniversalTime() && !string.IsNullOrEmpty(cookie.Value))
-                {
-                    ResponseJson<UserInfo> result = _Login(new LoginDTO() { AuthToken = cookie.Value });
+                ResponseJson<LoginUserInfo> result = _Login(new LoginDTO { }, cookie);
+                if (!string.IsNullOrEmpty(result.Data.AuthToken))
                     return View(new UserViewModel { ID = result.Data.ID, Name = result.Data.Name });
-                }
+                return View();
             }
             return View();
         }
 
+        /// <summary>
+        /// Login action.
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        [HttpPost]
         public ActionResult Login(LoginDTO model)
         {
             model.TimeStamp = Utils.TimeStamp().ToString();
             model.Token = Utils.MD5(string.Format("{0}-{1}", model.UserName, model.TimeStamp));
-            ResponseJson<UserInfo> result = _Login(model);
+            ResponseJson<LoginUserInfo> result = _Login(model);
             //add cookies.
             if (result.Data != null)
                 Response.Cookies.Add(new HttpCookie("authtoken", result.Data.AuthToken) { Expires = DateTime.Now.ToUniversalTime().AddDays(7) });
             return Json(result);
         }
 
-        private ResponseJson<UserInfo> _Login(LoginDTO model)
+        /// <summary>
+        /// Logout action.
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult Logout()
         {
-            ResponseJson<UserInfo> responsJson = WebUtils.Post<UserInfo>(string.Format("{0}/{1}", ApiServer, "api/login"), model);
+            string cookie = GetCookieToken();
+            if (!string.IsNullOrEmpty(cookie))
+            {
+                ResponseJson<object> responseJson = WebUtils.Post<object>(string.Format("{0}/{1}", ApiServer, "api/logout"), new LogoutDTO(), cookie);
+                if (responseJson.State)
+                    return RedirectToAction("Index", "Home");
+            }
+
+            return RedirectToAction("Index", "Home");
+        }
+
+        /// <summary>
+        /// User registe.
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        public ActionResult Registe()
+        {
+            return View();
+        }
+
+        /// <summary>
+        /// User registe for post form.
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        [HttpPost]
+        [ActionName("Registe")]
+        public ActionResult RegisteUser(RegisteDTO model)
+        {
+            ResponseJson<string> result = WebUtils.Post<string>(string.Format("{0}/{1}", ApiServer, "api/registe"), model);
+            return Json(result);
+        }
+
+        /// <summary>
+        /// TODO:find password.
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult FindPwd()
+        {
+            return View();
+        }
+
+
+        /// <summary>
+        /// Login function.
+        /// </summary>
+        /// <param name="model"></param>
+        /// <param name="authToken"></param>
+        /// <returns></returns>
+        private ResponseJson<LoginUserInfo> _Login(LoginDTO model, string authToken = "")
+        {
+            ResponseJson<LoginUserInfo> responsJson = WebUtils.Post<LoginUserInfo>(string.Format("{0}/{1}", ApiServer, "api/login"), model, authToken);
             return responsJson;
         }
     }

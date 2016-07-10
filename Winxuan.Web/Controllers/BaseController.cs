@@ -14,5 +14,18 @@ namespace Winxuan.Web.Controllers
         public BaseController()
         {
         }
+
+        protected string GetCookieToken()
+        {
+            HttpCookie cookie = Request.Cookies["authtoken"];
+            if (cookie != null)
+            {
+                if (!string.IsNullOrEmpty(cookie.Value))
+                {
+                    return cookie.Value;
+                }
+            }
+            return string.Empty;
+        }
     }
 }

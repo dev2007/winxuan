@@ -1,6 +1,8 @@
-﻿@Model Winxuan.Web.Models.UserViewModel
+﻿@using Winxuan.Web.Models
+@model Winxuan.Web.Models.UserViewModel
 @{
     Layout = null;
+    ViewBag.Title = "组文件";
 }
 
 <!DOCTYPE html>
@@ -60,7 +62,13 @@
     </style>
     <script type="text/javascript">
         $(document).ready(function () {
-            $("#dashboard").hide();
+            @if(Model == null){
+                <text>$("#dashboard").hide(); $("#name").hide();</text>
+            }else{
+                <text>$("#loginform").hide(); $("#forgetpwd").hide(); loadTeam();</text>
+            }
+
+            loadTeam();
 
             //login
             $("#loginbtn").on("click", function () {
@@ -69,22 +77,40 @@
                 if (userName == "") {
                     $("#loginbtn").focus();
                     alert("请输入用户名");
+                    return;
                 } else if (password == "") {
                     $("#password").focus();
                     alert("请输入密码");
+                    return;
                 }
                 $.post("/Home/Login", { username: userName, password: password }, function (result) {
                     var v = eval(result);
                     if (!v.State) {
                         alert(v.ErrorMsg);
                     } else {
-                        //TODO 
+                        //TODO
                         $("#loginform").hide();
+                        $("#forgetpwd").hide();
                         $("#dashboard").show();
+                        $("#name").show();
+                        $("#name").text(v.Data.Name);
+                        loadTeam();
                     }
                 });
             });
+
+            //registe
+            $("#registe").on("click", function () {
+                window.location.href = "/Home/Registe";
+            });
         });
+
+        //load user's team information.
+        var loadTeam = function () {
+            $.get("/Team/List", function (result) {
+                $("#body").html(result);
+            });
+        };
     </script>
 </head>
 <body>
@@ -102,18 +128,31 @@
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#" id="dashboard">个人中心</a></li>
-                    <li><a href="#">帮&nbsp;&nbsp;助</a></li>
+                    @*<!--后一版本增加邮箱后提供忘记密码功能--><li><a href="/Home/FindPwd" id="forgetpwd">忘记密码</a></li>*@
+                    @if (Model == null)
+                    {
+                        <li><a href="javascript:;" id="name"></a></li>
+                    }
+                    else
+                    {
+                        <li><a href="javascript:;" id="name">@Model.Name</a></li>
+                    }
+                    <li class="dropdown" id="dashboard">
+                        <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">个人中心 <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="javascript:;">修改密码</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="/Home/Logout">注销登录</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="javascript:;">帮&nbsp;&nbsp;助</a></li>
                 </ul>
-                @if (Model == null)
-                {
-                    <form class="navbar-form navbar-right" id="loginform">
-                        <input type="text" class="form-control" placeholder="用户名" id="username">
-                        <input type="password" class="form-control" placeholder="密码" id="password">
-                        <button type="button" class="btn btn-default" id="loginbtn">登&nbsp;&nbsp;录</button>
-                        <button type="button" class="btn btn-success">注&nbsp;&nbsp;册</button>
-                    </form>
-                }
+                <form class="navbar-form navbar-right" id="loginform" method="post">
+                    <input type="text" class="form-control" placeholder="用户名" id="username" name="username">
+                    <input type="password" class="form-control" placeholder="密码" id="password" name="password">
+                    <button type="button" class="btn btn-default" id="loginbtn">登&nbsp;&nbsp;录</button>
+                    <button type="button" class="btn btn-success" id="registe">注&nbsp;&nbsp;册</button>
+                </form>
             </div>
         </div>
     </nav>
@@ -129,5 +168,3 @@
     </footer>
 </body>
 </html>
-
-

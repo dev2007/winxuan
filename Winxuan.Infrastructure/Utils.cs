@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace Winxuan.Infrastructure
 {
+    /// <summary>
+    /// Helper class.
+    /// </summary>
     public class Utils
     {
         /// <summary>
@@ -37,8 +40,9 @@ namespace Winxuan.Infrastructure
         public static string MD5(string sourceStr)
         {
             MD5 md5 = new MD5CryptoServiceProvider();
-            byte[] result = md5.ComputeHash(System.Text.Encoding.Default.GetBytes(sourceStr));
-            return System.Text.Encoding.Default.GetString(result);
+            byte[] result = md5.ComputeHash(System.Text.Encoding.Unicode.GetBytes(sourceStr));
+            string str = BitConverter.ToString(md5.ComputeHash(System.Text.Encoding.Unicode.GetBytes(sourceStr)));
+            return str.Replace("-","");
         }
 
         /// <summary>

@@ -7,9 +7,12 @@ using Winxuan.Data.Model;
 
 namespace Winxuan.Infrastructure
 {
+    /// <summary>
+    /// Cache system for login user.
+    /// </summary>
     public class UserLoginCache
     {
-        private static IDictionary<string, UserInfo> store = new Dictionary<string, UserInfo>();
+        private static IDictionary<string, LoginUserInfo> store = new Dictionary<string, LoginUserInfo>();
 
         /// <summary>
         /// Add user cache data.
@@ -22,8 +25,45 @@ namespace Winxuan.Infrastructure
             if (store.ContainsKey(token))
                 return false;
 
-            store.Add(token, new UserInfo(token, user));
+            store.Add(token, new LoginUserInfo(token, user));
 
+            return true;
+        }
+
+        /// <summary>
+        /// Charge if this token is contained.
+        /// </summary>
+        /// <param name="token"></param>
+        /// <returns></returns>
+        public static bool ContainsKey(string token)
+        {
+            return store.ContainsKey(token);
+        }
+
+        /// <summary>
+        /// Charge if the user hold the token is login.
+        /// </summary>
+        /// <param name="token"></param>
+        /// <returns></returns>
+        public static bool IsLogin(string token)
+        {
+            if (ContainsKey(token))
+            {
+                return !FindUser(token).OutTime();
+            }
+            else
+                return false;
+        }
+
+        /// <summary>
+        /// Remove login user cache by authtoken.
+        /// </summary>
+        /// <param name="token"></param>
+        /// <returns></returns>
+        public static bool RemoveCache(string token)
+        {
+            if (store.ContainsKey(token))
+                return store.Remove(token);
             return true;
         }
 
@@ -32,18 +72,20 @@ namespace Winxuan.Infrastructure
         /// </summary>
         /// <param name="token"></param>
         /// <returns></returns>
-        public static UserInfo FindUser(string token)
+        public static LoginUserInfo FindUser(string token)
         {
             if (string.IsNullOrEmpty(token))
                 throw new Exception("Token can not be empty.");
             if (!store.ContainsKey(token))
-                return new UserInfo();
+                return new LoginUserInfo();
             return store[token];
         }
     }
 
-
-    public class UserInfo
+    /// <summary>
+    /// Basic information class for login users.
+    /// </summary>
+    public class LoginUserInfo
     {
         /// <summary>
         /// User id.
@@ -69,16 +111,16 @@ namespace Winxuan.Infrastructure
         /// Cache day.
         /// </summary>
         private readonly int ExpiryDay = 7;
-        public UserInfo()
+        public LoginUserInfo()
         {
             this.ID = 0;
             this.CacheDay = DateTime.Now.ToUniversalTime();
         }
 
-        public UserInfo(string token, User user)
+        public LoginUserInfo(string token, User user)
             : this()
         {
-            this.ID = user.ID;
+            this.ID = user.Id;
             this.UserName = user.UserName;
             this.Name = user.Name;
 

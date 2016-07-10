@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Web.Security;
 using Winxuan.Data;
+using Winxuan.Infrastructure.Filters;
 
 namespace Winxuan.WebApi.Controllers
 {

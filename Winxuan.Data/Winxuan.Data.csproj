@@ -64,6 +64,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\Team.cs" />
+    <Compile Include="Model\TeamWithUser.cs" />
+    <Compile Include="Model\UserRole.cs" />
     <Compile Include="WxBaseContext.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="WxContext.cs" />

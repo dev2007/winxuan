@@ -32,10 +32,10 @@ namespace Winxuan.Service.Impl
                 {
                     return ResponseFail.Json("", "用户名和密码为空");
                 }
-                else if(!string.IsNullOrEmpty(login.AuthToken))
+                else if (!string.IsNullOrEmpty(login.AuthToken))
                 {
-                    UserInfo userInfo = UserLoginCache.FindUser(login.AuthToken);
-                    if(!userInfo.OutTime())
+                    LoginUserInfo userInfo = UserLoginCache.FindUser(login.AuthToken);
+                    if (!userInfo.OutTime())
                     {
                         return ResponseSuccess.Json(UserLoginCache.FindUser(login.AuthToken));
                     }
@@ -49,7 +49,7 @@ namespace Winxuan.Service.Impl
                 else if (!Utils.CompareMD5(login.Token, string.Format("{0}-{1}", login.UserName, login.TimeStamp)))
                     return ResponseFail.Json("", "参数异常，请检查[Token]");
 
-                User user = context.Users.ToList().First(t => t.UserName == login.UserName);
+                User user = context.Users.ToList().Find(t=> t.UserName == login.UserName);
                 if (user == null)
                 {
                     return CheckLoginInfo();
@@ -75,11 +75,20 @@ namespace Winxuan.Service.Impl
         /// <summary>
         /// Logout.
         /// </summary>
-        /// <param name="userName"></param>
+        /// <param name="authToken"></param>
         /// <returns></returns>
-        public Task<string> Logout(string userName)
+        public Task<string> Logout(string authToken)
         {
-            throw new NotImplementedException();
+            return Task.Run(() =>
+            {
+                if (UserLoginCache.ContainsKey(authToken))
+                {
+                    bool result = UserLoginCache.RemoveCache(authToken);
+                    return result ? ResponseSuccess.Json() : ResponseFail.Json("", "注销失败，请重试");
+                }
+                else
+                    return ResponseSuccess.Json();
+            });
         }
 
         private string CheckLoginInfo()
@@ -98,17 +107,19 @@ namespace Winxuan.Service.Impl
             {
                 if (register == null)
                 {
-                    return ResponseFail.Json("", "信息未填写");
+                    return ResponseFail.Json("", "注册信息未填写");
                 }
                 else if (string.IsNullOrEmpty(register.UserName))
                     return ResponseFail.Json("", "用户名未填写");
                 else if (string.IsNullOrEmpty(register.Name))
-                    return ResponseFail.Json("", "真实姓名未填写");
+                    return ResponseFail.Json("", "昵称/真实姓名未填写");
                 else if (string.IsNullOrEmpty(register.Password))
                     return ResponseFail.Json("", "密码未填写");
-                else if (context.Users.ToList().Select(t => { return t.UserName == register.UserName; }).Count() > 0)
+                else if (register.Password != register.RePassword)
+                    return ResponseFail.Json("", "两次密码填写不一致");
+                else if (context.Users.ToList().Where(t=> t.UserName == register.UserName).Count() > 0)
                 {
-                    return ResponseFail.Json("", "用户名重复");
+                    return ResponseFail.Json("", "用户名重复，请换一个");
                 }
 
                 var user = new User()
@@ -129,7 +140,7 @@ namespace Winxuan.Service.Impl
                     return ResponseFail.Json("", e.Message);
                 }
 
-                return ResponseSuccess.Json("注册成功");
+                return ResponseSuccess.Json("注册成功，请登录");
             });
         }
     }
