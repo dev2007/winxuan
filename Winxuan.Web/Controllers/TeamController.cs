@@ -19,7 +19,7 @@ namespace Winxuan.Web.Controllers
         {
             ResponseJson<IEnumerable<UserTeamDTO>> list = WebUtils.Get<IEnumerable<UserTeamDTO>>(string.Format("{0}/{1}", ApiServer, "api/team"), GetCookieToken());
             IEnumerable<TeamViewModel> teamList = null;
-            if(list.State)
+            if(list.Status)
             {
                 teamList = list.Data.Select(t => new TeamViewModel 
                 { 

@@ -83,3 +83,5 @@ D:\WorkSpaces\Winxuan\Winxuan.WebApi\bin\zh-Hant\System.Spatial.resources.dll
 D:\WorkSpaces\Winxuan\Winxuan.WebApi\obj\Debug\Winxuan.WebApi.csprojResolveAssemblyReference.cache
 D:\WorkSpaces\Winxuan\Winxuan.WebApi\obj\Debug\Winxuan.WebApi.dll
 D:\WorkSpaces\Winxuan\Winxuan.WebApi\obj\Debug\Winxuan.WebApi.pdb
+D:\WorkSpaces\Winxuan\Winxuan.WebApi\bin\Winxuan.Server.dll
+D:\WorkSpaces\Winxuan\Winxuan.WebApi\bin\Winxuan.Server.pdb

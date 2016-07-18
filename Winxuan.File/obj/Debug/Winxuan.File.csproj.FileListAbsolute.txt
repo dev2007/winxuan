@@ -7,3 +7,4 @@ D:\WorkSpaces\Winxuan\Winxuan.File\bin\Debug\System.Net.Http.Formatting.xml
 D:\WorkSpaces\Winxuan\Winxuan.File\bin\Debug\System.Web.Http.xml
 D:\WorkSpaces\Winxuan\Winxuan.File\obj\Debug\Winxuan.File.dll
 D:\WorkSpaces\Winxuan\Winxuan.File\obj\Debug\Winxuan.File.pdb
+D:\WorkSpaces\Winxuan\Winxuan.File\obj\Debug\Winxuan.File.csprojResolveAssemblyReference.cache

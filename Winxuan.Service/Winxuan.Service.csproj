@@ -55,8 +55,14 @@
     <Compile Include="BaseService.cs" />
     <Compile Include="Impl\AccountService.cs" />
     <Compile Include="Impl\TeamService.cs" />
+    <Compile Include="Impl\TeamUserService.cs" />
+    <Compile Include="Impl\UserService.cs" />
+    <Compile Include="Impl\UserTeamService.cs" />
     <Compile Include="Interfaces\IAccountService.cs" />
     <Compile Include="Interfaces\ITeamService.cs" />
+    <Compile Include="Interfaces\ITeamUserService.cs" />
+    <Compile Include="Interfaces\IUserService.cs" />
+    <Compile Include="Interfaces\IUserTeamService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -71,6 +77,10 @@
     <ProjectReference Include="..\Winxuan.Infrastructure\Winxuan.Infrastructure.csproj">
       <Project>{ae2112ac-8b37-4dec-bdb2-69cfac40e92e}</Project>
       <Name>Winxuan.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Winxuan.Server\Winxuan.Server.csproj">
+      <Project>{b4cf59dd-6f4a-4992-ab9a-024f21e233c7}</Project>
+      <Name>Winxuan.Server</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

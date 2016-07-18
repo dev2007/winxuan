@@ -12,7 +12,11 @@ namespace Winxuan.Infrastructure.DTO
 
         public int TeamId { get; set; }
 
+        public string TeamName { get; set; }
+
         public string TeamDescription { get; set; }
+
+        public string UserName { get; set; }
 
         public int RoleId { get; set; }
 

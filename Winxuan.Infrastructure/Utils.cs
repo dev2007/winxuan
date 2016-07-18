@@ -42,7 +42,24 @@ namespace Winxuan.Infrastructure
             MD5 md5 = new MD5CryptoServiceProvider();
             byte[] result = md5.ComputeHash(System.Text.Encoding.Unicode.GetBytes(sourceStr));
             string str = BitConverter.ToString(md5.ComputeHash(System.Text.Encoding.Unicode.GetBytes(sourceStr)));
-            return str.Replace("-","");
+            return str.Replace("-", "");
+        }
+
+        /// <summary>
+        /// Get login user's token.
+        /// </summary>
+        /// <param name="userName"></param>
+        /// <param name="timeStamp"></param>
+        /// <returns></returns>
+        public static string LoginToken(string userName, string timeStamp)
+        {
+            if (string.IsNullOrEmpty(userName))
+                throw new ArgumentNullException("userName");
+
+            if (string.IsNullOrEmpty(timeStamp))
+                throw new ArgumentNullException("timeStamp");
+
+            return Utils.MD5(string.Format("{0}-{1}", userName, timeStamp));
         }
 
         /// <summary>
@@ -51,7 +68,7 @@ namespace Winxuan.Infrastructure
         /// <param name="sourceMD5"></param>
         /// <param name="sourceStr"></param>
         /// <returns></returns>
-        public static bool CompareMD5(string sourceMD5,string sourceStr)
+        public static bool CompareMD5(string sourceMD5, string sourceStr)
         {
             return MD5(sourceStr) == sourceMD5;
         }

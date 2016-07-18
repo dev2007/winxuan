@@ -26,7 +26,7 @@ namespace Winxuan.Infrastructure
         public static ResponseJson<T> Get<T>(string url, string authToken) where T : class
         {
             string result = BaseReq(url, HttpMethod.GET,authToken:authToken);
-            return JsonConvert.DeserializeObject<ResponseJson<T>>(ProcessResponseJson(result));
+            return WebUtils.DeserializeObject<T>(ProcessResponseJson(result));
         }
 
         /// <summary>
@@ -41,7 +41,7 @@ namespace Winxuan.Infrastructure
         {
             string jsonParams = JsonConvert.SerializeObject(data);
             string result = BaseReq(url, HttpMethod.POST, jsonParams,authToken);
-            return JsonConvert.DeserializeObject<ResponseJson<T>>(ProcessResponseJson(result));
+            return WebUtils.DeserializeObject<T>(ProcessResponseJson(result));
         }
 
         private static string ProcessResponseJson(string result)
@@ -84,23 +84,6 @@ namespace Winxuan.Infrastructure
         }
 
         /// <summary>
-        /// Get the authorize token in http requset.
-        /// </summary>
-        /// <param name="request"></param>
-        /// <returns></returns>
-        public static string GetAuthToken(HttpRequestMessage request)
-        {
-            IEnumerable<string> headerValues = new List<string>();
-            string authToken = string.Empty;
-            if (request.Headers.TryGetValues("AuthToken", out headerValues))
-            {
-                authToken = headerValues.ElementAt(0);
-            }
-
-            return authToken;
-        }
-
-        /// <summary>
         /// Set the authorize token in http request.
         /// </summary>
         /// <param name="request"></param>
@@ -111,13 +94,24 @@ namespace Winxuan.Infrastructure
         }
 
         /// <summary>
-        /// Get current user id.
+        /// Deserialize response Json to ResponseJson object.
         /// </summary>
-        /// <param name="request"></param>
+        /// <param name="result"></param>
         /// <returns></returns>
-        public static int CurrentUserId(HttpRequestMessage request)
+        public static ResponseJson DeserializeObject(string result)
         {
-            return UserLoginCache.CurrentUserId(GetAuthToken(request));
+            return JsonConvert.DeserializeObject<ResponseJson>(result);
+        }
+
+        /// <summary>
+        /// Deserialize response Json to ResponseJson object.{T} is the ResposeJson.Data type.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="result"></param>
+        /// <returns></returns>
+        public static ResponseJson<T> DeserializeObject<T>(string result)
+        {
+            return JsonConvert.DeserializeObject<ResponseJson<T>>(result);
         }
     }
 

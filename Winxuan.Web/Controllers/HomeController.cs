@@ -38,7 +38,7 @@ namespace Winxuan.Web.Controllers
         public ActionResult Login(LoginDTO model)
         {
             model.TimeStamp = Utils.TimeStamp().ToString();
-            model.Token = Utils.MD5(string.Format("{0}-{1}", model.UserName, model.TimeStamp));
+            model.Token = Utils.LoginToken(model.UserName, model.TimeStamp);
             ResponseJson<LoginUserInfo> result = _Login(model);
             //add cookies.
             if (result.Data != null)
@@ -56,7 +56,7 @@ namespace Winxuan.Web.Controllers
             if (!string.IsNullOrEmpty(cookie))
             {
                 ResponseJson<object> responseJson = WebUtils.Post<object>(string.Format("{0}/{1}", ApiServer, "api/logout"), new LogoutDTO(), cookie);
-                if (responseJson.State)
+                if (responseJson.Status)
                     return RedirectToAction("Index", "Home");
             }
 
@@ -82,7 +82,7 @@ namespace Winxuan.Web.Controllers
         [ActionName("Registe")]
         public ActionResult RegisteUser(RegisteDTO model)
         {
-            ResponseJson<string> result = WebUtils.Post<string>(string.Format("{0}/{1}", ApiServer, "api/registe"), model);
+            ResponseJson<string> result = WebUtils.Post<string>(string.Format("{0}/{1}", ApiServer, "api/user"), model);
             return Json(result);
         }
 

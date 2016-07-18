@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using Winxuan.Infrastructure.DTO;
@@ -33,7 +34,7 @@ namespace Winxuan.Infrastructure
         public static string Json(bool isSuccess, object data, string errorMsg = "", int statusCode = 200)
         {
             ResponseJson result = new ResponseJson();
-            result.State = isSuccess;
+            result.Status = isSuccess;
             result.Result = isSuccess ? Succcess : Fail;
             result.Data = data;
             result.ErrorMsg = errorMsg;
@@ -52,7 +53,7 @@ namespace Winxuan.Infrastructure
         /// </summary>
         /// <param name="data">the data of response.</param>
         /// <returns></returns>
-        public static string Json(object data=null)
+        public static string Json(object data = null)
         {
             return Json(true, data);
         }
@@ -64,6 +65,16 @@ namespace Winxuan.Infrastructure
     public class ResponseFail : ResponseInfo
     {
         /// <summary>
+        /// Create json for failure.The default data is string.Empty.
+        /// </summary>
+        /// <param name="errorMsg">the message of failure.</param>
+        /// <returns></returns>
+        public static string Json(string errorMsg)
+        {
+            return ResponseFail.Json("", errorMsg);
+        }
+
+        /// <summary>
         /// create json for failure.The default status code is 204.
         /// </summary>
         /// <param name="data">the data of response.</param>
@@ -73,7 +84,7 @@ namespace Winxuan.Infrastructure
         {
             if (string.IsNullOrEmpty(errorMsg))
                 throw new Exception("Not set error message");
-            return ResponseInfo.Json(false, data, errorMsg,204);
+            return ResponseInfo.Json(false, data, errorMsg, 204);
         }
 
         /// <summary>
@@ -88,6 +99,40 @@ namespace Winxuan.Infrastructure
             if (string.IsNullOrEmpty(errorMsg))
                 throw new Exception("Not set error message");
             return ResponseInfo.Json(false, data, errorMsg, statusCode);
+        }
+
+        /// <summary>
+        /// Fail for Unauthorized 401.
+        /// 非授权操作
+        /// </summary>
+        /// <param name="data"></param>
+        /// <returns></returns>
+        public static string Forbidden(object data = null)
+        {
+            return ResponseFail.Json(data, "非授权操作", 401);
+        }
+
+        /// <summary>
+        /// Fail for NoContent 204.
+        /// 无相应数据
+        /// </summary>
+        /// <param name="data"></param>
+        /// <returns></returns>
+        public static string NoContent(object data = null)
+        {
+            return ResponseFail.Json(data, "无可操作数据", 204);
+        }
+
+        /// <summary>
+        /// Fail for ExpectationFailed 417.
+        /// 发生异常
+        /// </summary>
+        /// <param name="data"></param>
+        /// <param name="message"></param>
+        /// <returns></returns>
+        public static string ExpectationFailed(object data = null, string message = "")
+        {
+            return ResponseFail.Json(data, message, 417);
         }
     }
 }

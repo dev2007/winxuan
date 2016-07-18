@@ -15,7 +15,7 @@ namespace Winxuan.Infrastructure.DTO
         /// <summary>
         /// Result flag,true or false.It's same to the Result.
         /// </summary>
-        public bool State { get; set; }
+        public bool Status { get; set; }
         /// <summary>
         /// Result message,success or fail.
         /// </summary>

@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Winxuan.Data.Model;
+using Winxuan.Server;
 
 namespace Winxuan.Infrastructure.Test
 {

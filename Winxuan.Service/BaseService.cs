@@ -12,6 +12,9 @@ namespace Winxuan.Service
     /// </summary>
     public class BaseService
     {
+        /// <summary>
+        /// Data source context object.
+        /// </summary>
         protected WxBaseContext context = null;
         public BaseService(WxBaseContext context)
         {

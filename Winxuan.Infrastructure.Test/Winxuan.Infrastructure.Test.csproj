@@ -69,6 +69,10 @@
       <Project>{ae2112ac-8b37-4dec-bdb2-69cfac40e92e}</Project>
       <Name>Winxuan.Infrastructure</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Winxuan.Server\Winxuan.Server.csproj">
+      <Project>{b4cf59dd-6f4a-4992-ab9a-024f21e233c7}</Project>
+      <Name>Winxuan.Server</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

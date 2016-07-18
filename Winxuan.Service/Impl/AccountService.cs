@@ -7,10 +7,14 @@ using Winxuan.Data;
 using Winxuan.Data.Model;
 using Winxuan.Infrastructure;
 using Winxuan.Infrastructure.DTO;
+using Winxuan.Server;
 using Winxuan.Service.Interfaces;
 
 namespace Winxuan.Service.Impl
 {
+    /// <summary>
+    /// Account service class.
+    /// </summary>
     public class AccountService : BaseService, IAccountService
     {
         public AccountService(WxBaseContext context)
@@ -20,9 +24,9 @@ namespace Winxuan.Service.Impl
         }
 
         /// <summary>
-        /// Login
+        /// User login.
         /// </summary>
-        /// <param name="login"></param>
+        /// <param name="dto">Login information.</param>
         /// <returns></returns>
         public Task<string> Login(LoginDTO login)
         {
@@ -35,6 +39,11 @@ namespace Winxuan.Service.Impl
                 else if (!string.IsNullOrEmpty(login.AuthToken))
                 {
                     LoginUserInfo userInfo = UserLoginCache.FindUser(login.AuthToken);
+                    if(userInfo.ID == 0)
+                    {
+                        return ResponseFail.Json("[AuthToken]无效");
+                    }
+
                     if (!userInfo.OutTime())
                     {
                         return ResponseSuccess.Json(UserLoginCache.FindUser(login.AuthToken));
@@ -73,9 +82,9 @@ namespace Winxuan.Service.Impl
         }
 
         /// <summary>
-        /// Logout.
+        /// User logout. 
         /// </summary>
-        /// <param name="authToken"></param>
+        /// <param name="authToken">User's authorized token.</param>
         /// <returns></returns>
         public Task<string> Logout(string authToken)
         {
@@ -91,57 +100,13 @@ namespace Winxuan.Service.Impl
             });
         }
 
+        /// <summary>
+        /// Error message for login.
+        /// </summary>
+        /// <returns></returns>
         private string CheckLoginInfo()
         {
             return ResponseFail.Json("", "用户名或密码错误");
-        }
-
-        /// <summary>
-        /// Registe.
-        /// </summary>
-        /// <param name="register"></param>
-        /// <returns></returns>
-        public Task<string> Registe(RegisteDTO register)
-        {
-            return Task.Run(() =>
-            {
-                if (register == null)
-                {
-                    return ResponseFail.Json("", "注册信息未填写");
-                }
-                else if (string.IsNullOrEmpty(register.UserName))
-                    return ResponseFail.Json("", "用户名未填写");
-                else if (string.IsNullOrEmpty(register.Name))
-                    return ResponseFail.Json("", "昵称/真实姓名未填写");
-                else if (string.IsNullOrEmpty(register.Password))
-                    return ResponseFail.Json("", "密码未填写");
-                else if (register.Password != register.RePassword)
-                    return ResponseFail.Json("", "两次密码填写不一致");
-                else if (context.Users.ToList().Where(t=> t.UserName == register.UserName).Count() > 0)
-                {
-                    return ResponseFail.Json("", "用户名重复，请换一个");
-                }
-
-                var user = new User()
-                {
-                    UserName = register.UserName,
-                    Name = register.Name,
-                    Password = register.Password
-                };
-
-                context.Users.Add(user);
-
-                try
-                {
-                    context.SaveChanges();
-                }
-                catch (Exception e)
-                {
-                    return ResponseFail.Json("", e.Message);
-                }
-
-                return ResponseSuccess.Json("注册成功，请登录");
-            });
         }
     }
 }

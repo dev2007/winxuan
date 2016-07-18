@@ -20,3 +20,5 @@ D:\WorkSpaces\Winxuan\Winxuan.Service\bin\Debug\Winxuan.Service.dll.config
 D:\WorkSpaces\Winxuan\Winxuan.Service\bin\Debug\EntityFramework.SqlServer.dll
 D:\WorkSpaces\Winxuan\Winxuan.Service\bin\Debug\EntityFramework.SqlServer.xml
 D:\WorkSpaces\Winxuan\Winxuan.Service\bin\Debug\Newtonsoft.Json.xml
+D:\WorkSpaces\Winxuan\Winxuan.Service\bin\Debug\Winxuan.Server.dll
+D:\WorkSpaces\Winxuan\Winxuan.Service\bin\Debug\Winxuan.Server.pdb

@@ -186,9 +186,10 @@
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\FileController.cs" />
     <Compile Include="Controllers\LogoutController.cs" />
-    <Compile Include="Controllers\RegisteController.cs" />
     <Compile Include="Controllers\TeamController.cs" />
-    <Compile Include="UserController.cs" />
+    <Compile Include="Controllers\TeamUserController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Controllers\UserTeamController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -326,6 +327,10 @@
     <ProjectReference Include="..\Winxuan.Infrastructure\Winxuan.Infrastructure.csproj">
       <Project>{ae2112ac-8b37-4dec-bdb2-69cfac40e92e}</Project>
       <Name>Winxuan.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Winxuan.Server\Winxuan.Server.csproj">
+      <Project>{b4cf59dd-6f4a-4992-ab9a-024f21e233c7}</Project>
+      <Name>Winxuan.Server</Name>
     </ProjectReference>
     <ProjectReference Include="..\Winxuan.Service\Winxuan.Service.csproj">
       <Project>{d6603d1e-f0b7-42a8-b241-4a2dfce39b09}</Project>

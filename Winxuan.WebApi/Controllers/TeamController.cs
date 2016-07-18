@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Web.Http;
 using Winxuan.Infrastructure;
 using Winxuan.Infrastructure.DTO;
-using Winxuan.Infrastructure.Filters;
+using Winxuan.Server.Filters;
 using Winxuan.Service.Impl;
 using Winxuan.Service.Interfaces;
 
@@ -18,7 +18,7 @@ namespace Winxuan.WebApi.Controllers
     {
         private ITeamService serivce = new TeamService(context);
         /// <summary>
-        /// Get team information.
+        /// Get the team data.
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
@@ -28,30 +28,17 @@ namespace Winxuan.WebApi.Controllers
         }
 
         /// <summary>
-        /// Get teams of current user.
+        /// Get all teams data.
         /// </summary>
         /// <returns></returns>
         public async Task<string> Get()
         {
-            int id = -1;
-            string msg = string.Empty;
-            try
-            {
-                WebUtils.CurrentUserId(Request);
-            }
-            catch (Exception e)
-            {
-                msg = e.Message;
-            }
-
-            if (!string.IsNullOrEmpty(msg))
-                return await Task.Run(() => ResponseFail.Json("", msg));
-
-            return await serivce.GetUserTeams(id);
+            //TODO:读取header中的分页数据。
+            return await serivce.GetTeams(1);
         }
 
         /// <summary>
-        /// Create team.
+        /// Create a team.
         /// </summary>
         /// <param name="dto"></param>
         /// <returns></returns>
@@ -61,7 +48,7 @@ namespace Winxuan.WebApi.Controllers
         }
 
         /// <summary>
-        /// Delete team.
+        /// Delete the team.
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
@@ -71,7 +58,7 @@ namespace Winxuan.WebApi.Controllers
         }
 
         /// <summary>
-        /// Update team information.
+        /// Update the team data.
         /// </summary>
         /// <param name="dto"></param>
         /// <returns></returns>

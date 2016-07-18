@@ -10,3 +10,4 @@ D:\WorkSpaces\Winxuan\Winxuan.Client\obj\Debug\Winxuan.Client.Properties.Resourc
 D:\WorkSpaces\Winxuan\Winxuan.Client\obj\Debug\Winxuan.Client.csproj.GenerateResource.Cache
 D:\WorkSpaces\Winxuan\Winxuan.Client\obj\Debug\Winxuan.Client.exe
 D:\WorkSpaces\Winxuan\Winxuan.Client\obj\Debug\Winxuan.Client.pdb
+D:\WorkSpaces\Winxuan\Winxuan.Client\obj\Debug\Winxuan.Client.csprojResolveAssemblyReference.cache
