@@ -133,5 +133,38 @@ namespace Winxuan.Service.Test
             Assert.IsFalse(response.Status);
         }
 
+        /// <summary>
+        /// DeleteUser. Success.
+        /// </summary>
+        [TestMethod]
+        public void TestDeleteUser_Success()
+        {
+            var result = service.DeleteUser(1, 1);
+            var response = WebUtils.DeserializeObject(result.Result);
+            Assert.IsTrue(response.Status);
+        }
+
+        /// <summary>
+        /// DeleteUser. Fail. Error user id.
+        /// </summary>
+        [TestMethod]
+        public void TestDeleteUser_Fail_ErrorUserId()
+        {
+            var result = service.DeleteUser(-1, 1);
+            var response = WebUtils.DeserializeObject(result.Result);
+            Assert.IsFalse(response.Status);
+        }
+
+        /// <summary>
+        /// DeleteUser. Fail. Error team id.
+        /// </summary>
+        [TestMethod]
+        public void TestDeleteUser_Fail_ErrorTeamId()
+        {
+            var result = service.DeleteUser(1, -1);
+            var resposne = WebUtils.DeserializeObject(result.Result);
+            Assert.IsFalse(resposne.Status);
+        }
+
     }
 }

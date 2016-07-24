@@ -75,6 +75,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestTeamService.cs" />
     <Compile Include="TestTeamUserService.cs" />
+    <Compile Include="TestUserService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Test.Data\Test.Data.csproj">

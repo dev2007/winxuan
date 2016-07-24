@@ -32,7 +32,7 @@ namespace Winxuan.Service.Impl
         {
             return Task.Run(() =>
                 {
-                    var result = context.Users.Find(userId);
+                    var result = context.Users.ToList().Find(t => t.Id == userId);
                     if (result == null)
                         return ResponseFail.Json("", "无此用户数据");
 

@@ -110,7 +110,7 @@ namespace Winxuan.Service.Impl
                 {
                     try
                     {
-                        var teamWithUser = context.TeamWithUsers.First(t => t.TeamId == dto.TeamId && t.UserId == dto.UserId);
+                        var teamWithUser = context.TeamWithUsers.ToList().Find(t => t.TeamId == dto.TeamId && t.UserId == dto.UserId);
                         if (teamWithUser == null)
                             return ResponseFail.NoContent();
 
@@ -141,13 +141,14 @@ namespace Winxuan.Service.Impl
         {
             return Task.Run(() =>
                 {
-                    var teamWithUser = context.TeamWithUsers.First(t => t.TeamId == teamId && t.UserId == userId);
-                    if (teamWithUser == null)
-                        return ResponseFail.NoContent();
-
-                    context.TeamWithUsers.Remove(teamWithUser);
                     try
                     {
+                        var teamWithUser = context.TeamWithUsers.ToList().Find(t => t.TeamId == teamId && t.UserId == userId);
+                        if (teamWithUser == null)
+                            return ResponseFail.NoContent();
+
+                        context.TeamWithUsers.Remove(teamWithUser);
+
                         context.SaveChanges();
                     }   catch(Exception e)
                     {
