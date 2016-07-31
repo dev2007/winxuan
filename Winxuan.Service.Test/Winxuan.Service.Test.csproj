@@ -76,6 +76,7 @@
     <Compile Include="TestTeamService.cs" />
     <Compile Include="TestTeamUserService.cs" />
     <Compile Include="TestUserService.cs" />
+    <Compile Include="TestUserTeamService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Test.Data\Test.Data.csproj">

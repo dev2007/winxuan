@@ -97,10 +97,14 @@ namespace Winxuan.Service.Impl
         {
             return Task.Run(() =>
                 {
-                    var user = context.Users.Find(dto.Id);
+                    var user = context.Users.ToList().Find(t => t.Id == dto.Id);
                     if (user == null)
                     {
                         return ResponseFail.Json("", "无此用户，操作失败", 204);
+                    }
+                    else if (string.IsNullOrEmpty(dto.Name))
+                    {
+                        return ResponseFail.ExpectationFailed(message: "昵称/姓名不能为空");
                     }
 
                     user.Name = dto.Name;
@@ -110,7 +114,7 @@ namespace Winxuan.Service.Impl
                     }
                     catch (Exception e)
                     {
-                        return ResponseFail.Json("", e.Message);
+                        return ResponseFail.ExpectationFailed(message: e.Message);
                     }
 
                     return ResponseSuccess.Json();
@@ -126,7 +130,7 @@ namespace Winxuan.Service.Impl
         {
             return Task.Run(() =>
             {
-                var user = context.Users.Find(userId);
+                var user = context.Users.ToList().Find(t => t.Id == userId);
                 if (user == null)
                 {
                     return ResponseFail.Json("", "无此用户，操作失败", 204);
