@@ -22,6 +22,9 @@ namespace Winxuan.Web.Controllers
             if (!string.IsNullOrEmpty(cookie))
             {
                 ResponseJson<LoginUserInfo> result = _Login(new LoginDTO { }, cookie);
+                if (!result.Status)
+                    return View();
+
                 if (!string.IsNullOrEmpty(result.Data.AuthToken))
                     return View(new UserViewModel { ID = result.Data.ID, Name = result.Data.Name });
                 return View();
@@ -42,7 +45,10 @@ namespace Winxuan.Web.Controllers
             ResponseJson<LoginUserInfo> result = _Login(model);
             //add cookies.
             if (result.Data != null)
+            {
                 Response.Cookies.Add(new HttpCookie("authtoken", result.Data.AuthToken) { Expires = DateTime.Now.ToUniversalTime().AddDays(7) });
+                Session.Add("userid", result.Data.ID);
+            }
             return Json(result);
         }
 
@@ -55,7 +61,7 @@ namespace Winxuan.Web.Controllers
             string cookie = GetCookieToken();
             if (!string.IsNullOrEmpty(cookie))
             {
-                ResponseJson<object> responseJson = WebUtils.Post<object>(string.Format("{0}/{1}", ApiServer, "api/logout"), new LogoutDTO(), cookie);
+                ResponseJson<object> responseJson = WebUtils.Post<object>(string.Format("{0}/{1}", ApiServer, "api/logout"), new LogoutDTO() { AuthoToken = cookie }, cookie);
                 if (responseJson.Status)
                     return RedirectToAction("Index", "Home");
             }

@@ -17,20 +17,21 @@ namespace Winxuan.Web.Controllers
         /// <returns></returns>
         public PartialViewResult List()
         {
-            ResponseJson<IEnumerable<UserTeamDTO>> list = WebUtils.Get<IEnumerable<UserTeamDTO>>(string.Format("{0}/{1}", ApiServer, "api/team"), GetCookieToken());
+            ResponseJson<IEnumerable<UserTeamDTO>> list = WebUtils.Get<IEnumerable<UserTeamDTO>>(string.Format("{0}/{1}/{2}", ApiServer, "api/UserTeam", Session["userid"]), GetCookieToken());
             IEnumerable<TeamViewModel> teamList = null;
-            if(list.Status)
+            if (list.Status)
             {
-                teamList = list.Data.Select(t => new TeamViewModel 
-                { 
+                teamList = list.Data.Select(t => new TeamViewModel
+                {
                     UserId = t.UserId,
                     TeamId = t.TeamId,
+                    TeamName = t.TeamName,
                     TeamDescription = t.TeamDescription,
                     RoleId = t.RoleId,
                     RoleDescription = t.RoleDescription
                 });
             }
-            return PartialView("List",teamList);
+            return PartialView("List", teamList);
         }
     }
 }

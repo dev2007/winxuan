@@ -68,8 +68,6 @@
                 <text>$("#loginform").hide(); $("#forgetpwd").hide(); loadTeam();</text>
             }
 
-            loadTeam();
-
             //login
             $("#loginbtn").on("click", function () {
                 var userName = $("#username").val();
@@ -85,7 +83,7 @@
                 }
                 $.post("/Home/Login", { username: userName, password: password }, function (result) {
                     var v = eval(result);
-                    if (!v.State) {
+                    if (!v.Status) {
                         alert(v.ErrorMsg);
                     } else {
                         //TODO
@@ -158,7 +156,10 @@
     </nav>
     <!--body content-->
     <div class="container" id="body">
-        @Html.Partial("PartialMain")
+        @if (Model == null)
+        {
+            @Html.Partial("PartialMain")
+        }
     </div>
     <!--footer content-->
     <footer class="footer">

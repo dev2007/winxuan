@@ -38,6 +38,7 @@ namespace Winxuan.Service.Impl
                              {
                                  UserId = teamWithUser.UserId,
                                  TeamId = teamWithUser.TeamId,
+                                 TeamName = team.TeamName,
                                  TeamDescription = team.TeamDescription,
                                  RoleId = teamWithUser.UserRole,
                                  RoleDescription = role.RoleDescription

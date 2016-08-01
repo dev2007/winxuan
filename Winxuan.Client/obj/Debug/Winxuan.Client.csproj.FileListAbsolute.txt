@@ -11,3 +11,16 @@ D:\WorkSpaces\Winxuan\Winxuan.Client\obj\Debug\Winxuan.Client.csproj.GenerateRes
 D:\WorkSpaces\Winxuan\Winxuan.Client\obj\Debug\Winxuan.Client.exe
 D:\WorkSpaces\Winxuan\Winxuan.Client\obj\Debug\Winxuan.Client.pdb
 D:\WorkSpaces\Winxuan\Winxuan.Client\obj\Debug\Winxuan.Client.csprojResolveAssemblyReference.cache
+D:\MySpace\winxuan\Winxuan.Client\bin\Debug\Winxuan.Client.exe.config
+D:\MySpace\winxuan\Winxuan.Client\bin\Debug\Winxuan.Client.exe
+D:\MySpace\winxuan\Winxuan.Client\bin\Debug\Winxuan.Client.pdb
+D:\MySpace\winxuan\Winxuan.Client\obj\Debug\Winxuan.Client.csprojResolveAssemblyReference.cache
+D:\MySpace\winxuan\Winxuan.Client\obj\Debug\MainWindow.baml
+D:\MySpace\winxuan\Winxuan.Client\obj\Debug\MainWindow.g.cs
+D:\MySpace\winxuan\Winxuan.Client\obj\Debug\App.g.cs
+D:\MySpace\winxuan\Winxuan.Client\obj\Debug\Winxuan.Client_MarkupCompile.cache
+D:\MySpace\winxuan\Winxuan.Client\obj\Debug\Winxuan.Client.g.resources
+D:\MySpace\winxuan\Winxuan.Client\obj\Debug\Winxuan.Client.Properties.Resources.resources
+D:\MySpace\winxuan\Winxuan.Client\obj\Debug\Winxuan.Client.csproj.GenerateResource.Cache
+D:\MySpace\winxuan\Winxuan.Client\obj\Debug\Winxuan.Client.exe
+D:\MySpace\winxuan\Winxuan.Client\obj\Debug\Winxuan.Client.pdb

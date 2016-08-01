@@ -12,3 +12,17 @@ D:\WorkSpaces\Winxuan\Winxuan.Data\bin\Debug\System.Data.SQLite.EF6.dll
 D:\WorkSpaces\Winxuan\Winxuan.Data\bin\Debug\System.Data.SQLite.Linq.dll
 D:\WorkSpaces\Winxuan\Winxuan.Data\bin\Debug\System.Data.SQLite.xml
 D:\WorkSpaces\Winxuan\Winxuan.Data\obj\Debug\Winxuan.Data.csprojResolveAssemblyReference.cache
+D:\MySpace\winxuan\Winxuan.Data\bin\Debug\Winxuan.Data.dll.config
+D:\MySpace\winxuan\Winxuan.Data\bin\Debug\Winxuan.Data.dll
+D:\MySpace\winxuan\Winxuan.Data\bin\Debug\Winxuan.Data.pdb
+D:\MySpace\winxuan\Winxuan.Data\bin\Debug\EntityFramework.dll
+D:\MySpace\winxuan\Winxuan.Data\bin\Debug\EntityFramework.SqlServer.dll
+D:\MySpace\winxuan\Winxuan.Data\bin\Debug\System.Data.SQLite.dll
+D:\MySpace\winxuan\Winxuan.Data\bin\Debug\System.Data.SQLite.EF6.dll
+D:\MySpace\winxuan\Winxuan.Data\bin\Debug\System.Data.SQLite.Linq.dll
+D:\MySpace\winxuan\Winxuan.Data\bin\Debug\EntityFramework.xml
+D:\MySpace\winxuan\Winxuan.Data\bin\Debug\EntityFramework.SqlServer.xml
+D:\MySpace\winxuan\Winxuan.Data\bin\Debug\System.Data.SQLite.xml
+D:\MySpace\winxuan\Winxuan.Data\obj\Debug\Winxuan.Data.csprojResolveAssemblyReference.cache
+D:\MySpace\winxuan\Winxuan.Data\obj\Debug\Winxuan.Data.dll
+D:\MySpace\winxuan\Winxuan.Data\obj\Debug\Winxuan.Data.pdb

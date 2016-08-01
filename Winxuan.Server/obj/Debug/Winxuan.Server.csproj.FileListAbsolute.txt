@@ -15,3 +15,16 @@ D:\WorkSpaces\Winxuan\Winxuan.Server\bin\Debug\System.Net.Http.Formatting.xml
 D:\WorkSpaces\Winxuan\Winxuan.Server\obj\Debug\Winxuan.Server.csprojResolveAssemblyReference.cache
 D:\WorkSpaces\Winxuan\Winxuan.Server\obj\Debug\Winxuan.Server.dll
 D:\WorkSpaces\Winxuan\Winxuan.Server\obj\Debug\Winxuan.Server.pdb
+D:\MySpace\winxuan\Winxuan.Server\bin\Debug\Winxuan.Server.dll
+D:\MySpace\winxuan\Winxuan.Server\bin\Debug\Winxuan.Server.pdb
+D:\MySpace\winxuan\Winxuan.Server\bin\Debug\Winxuan.Data.dll
+D:\MySpace\winxuan\Winxuan.Server\bin\Debug\Winxuan.Infrastructure.dll
+D:\MySpace\winxuan\Winxuan.Server\bin\Debug\EntityFramework.dll
+D:\MySpace\winxuan\Winxuan.Server\bin\Debug\Newtonsoft.Json.dll
+D:\MySpace\winxuan\Winxuan.Server\bin\Debug\Winxuan.Data.pdb
+D:\MySpace\winxuan\Winxuan.Server\bin\Debug\Winxuan.Infrastructure.pdb
+D:\MySpace\winxuan\Winxuan.Server\bin\Debug\EntityFramework.xml
+D:\MySpace\winxuan\Winxuan.Server\bin\Debug\Newtonsoft.Json.xml
+D:\MySpace\winxuan\Winxuan.Server\obj\Debug\Winxuan.Server.csprojResolveAssemblyReference.cache
+D:\MySpace\winxuan\Winxuan.Server\obj\Debug\Winxuan.Server.dll
+D:\MySpace\winxuan\Winxuan.Server\obj\Debug\Winxuan.Server.pdb
