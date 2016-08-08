@@ -12,6 +12,10 @@ namespace Winxuan.WebApi.Controllers
 {
     public class FileController : ApiController
     {
+        /// <summary>
+        /// File Uplload.
+        /// </summary>
+        /// <returns></returns>
         public async Task<string> Post()
         {
             return await FileStorage.UploadFile(Request);

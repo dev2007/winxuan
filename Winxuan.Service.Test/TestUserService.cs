@@ -137,7 +137,15 @@ namespace Winxuan.Service.Test
         [TestMethod]
         public void TestUpdateUser_Success()
         {
-           
+            var result = service.UpdateUser(new UserDTO()
+            {
+                    Id = 1,
+                    Name = "new test name"
+            });
+
+            var response = WebUtils.DeserializeObject(result.Result);
+
+            Assert.IsTrue(response.Status);
         }
 
         /// <summary>
@@ -146,7 +154,26 @@ namespace Winxuan.Service.Test
         [TestMethod]
         public void TestUpdateUser_Fail_ErrorUserId()
         {
+            var result = service.UpdateUser(new UserDTO()
+            {
+               Id = -1,
+               Name = "new test name"
+            });
 
+            var response = WebUtils.DeserializeObject(result.Result);
+            Assert.IsFalse(response.Status);
+        }
+
+        public void TestUpdateUser_Fail_EmptyName()
+        {
+            var result = service.UpdateUser(new UserDTO()
+            {
+               Id = 1,
+               Name = ""
+            });
+
+            var response = WebUtils.DeserializeObject(result.Result);
+            Assert.IsFalse(response.Status);
         }
 
         /// <summary>
@@ -155,7 +182,9 @@ namespace Winxuan.Service.Test
         [TestMethod]
         public void TestDeleteUser_Success()
         {
-
+            var result = service.DeleteUser(1);
+            var response = WebUtils.DeserializeObject(result.Result);
+            Assert.IsTrue(response.Status);
         }
 
         /// <summary>
@@ -164,7 +193,9 @@ namespace Winxuan.Service.Test
         [TestMethod]
         public void TestDeleteUser_Fail_ErrorUserId()
         {
-
+            var result = service.DeleteUser(-1);
+            var response = WebUtils.DeserializeObject(result.Result);
+            Assert.IsFalse(response.Status);
         }
     }
 }

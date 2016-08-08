@@ -31,6 +31,8 @@ namespace Winxuan.Web.Controllers
                     RoleDescription = t.RoleDescription
                 });
             }
+            ViewBag.TeamName = teamList.First().TeamName;
+            ViewBag.FileList = null;
             return PartialView("List", teamList);
         }
     }

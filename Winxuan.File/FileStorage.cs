@@ -45,6 +45,7 @@ namespace Winxuan.File
 
                     var fileInfo = streamProvider.FileData[0];
                     var info = new FileInfo(fileInfo.LocalFileName);
+                    
                     return info.FullName;
 
                 });
@@ -54,6 +55,11 @@ namespace Winxuan.File
             {
                 throw new HttpResponseException(request.CreateResponse(HttpStatusCode.NotAcceptable, "Invalid Request!"));
             }
+        }
+
+        private void StoreFileLog(string directoryName,int teamId)
+        {
+
         }
     }
 

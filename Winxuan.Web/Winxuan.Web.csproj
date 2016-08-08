@@ -246,6 +246,7 @@
     <Content Include="Views\Home\FindPwd.cshtml" />
     <Content Include="Views\Home\Registe.cshtml" />
     <Content Include="Views\Team\List.cshtml" />
+    <Content Include="Views\Team\PartFileList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
