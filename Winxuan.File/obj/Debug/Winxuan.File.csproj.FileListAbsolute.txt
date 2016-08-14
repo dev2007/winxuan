@@ -8,3 +8,9 @@ D:\WorkSpaces\Winxuan\Winxuan.File\bin\Debug\System.Web.Http.xml
 D:\WorkSpaces\Winxuan\Winxuan.File\obj\Debug\Winxuan.File.dll
 D:\WorkSpaces\Winxuan\Winxuan.File\obj\Debug\Winxuan.File.pdb
 D:\WorkSpaces\Winxuan\Winxuan.File\obj\Debug\Winxuan.File.csprojResolveAssemblyReference.cache
+D:\MySpace\winxuan\Winxuan.File\bin\Debug\Winxuan.File.dll
+D:\MySpace\winxuan\Winxuan.File\bin\Debug\Winxuan.File.pdb
+D:\MySpace\winxuan\Winxuan.File\bin\Debug\Newtonsoft.Json.dll
+D:\MySpace\winxuan\Winxuan.File\obj\Debug\Winxuan.File.csprojResolveAssemblyReference.cache
+D:\MySpace\winxuan\Winxuan.File\obj\Debug\Winxuan.File.dll
+D:\MySpace\winxuan\Winxuan.File\obj\Debug\Winxuan.File.pdb

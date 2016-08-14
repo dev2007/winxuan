@@ -15,7 +15,7 @@ namespace Winxuan.Web.Controllers
         /// User's team list page.
         /// </summary>
         /// <returns></returns>
-        public PartialViewResult List()
+        public ActionResult List()
         {
             ResponseJson<IEnumerable<UserTeamDTO>> list = WebUtils.Get<IEnumerable<UserTeamDTO>>(string.Format("{0}/{1}/{2}", ApiServer, "api/UserTeam", Session["userid"]), GetCookieToken());
             IEnumerable<TeamViewModel> teamList = null;
@@ -31,9 +31,11 @@ namespace Winxuan.Web.Controllers
                     RoleDescription = t.RoleDescription
                 });
             }
-            ViewBag.TeamName = teamList.First().TeamName;
+            var team = teamList == null ? new TeamViewModel() { } : teamList.First();
+            ViewBag.TeamName = team.TeamName;
+            ViewBag.TeamId = team.TeamId;
             ViewBag.FileList = null;
-            return PartialView("List", teamList);
+            return View(teamList);
         }
     }
 }

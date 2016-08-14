@@ -112,12 +112,10 @@ D:\MySpace\winxuan\Winxuan.WebApi\bin\System.Web.WebPages.dll
 D:\MySpace\winxuan\Winxuan.WebApi\bin\System.Web.WebPages.Razor.dll
 D:\MySpace\winxuan\Winxuan.WebApi\bin\WebGrease.dll
 D:\MySpace\winxuan\Winxuan.WebApi\bin\Winxuan.Data.dll
-D:\MySpace\winxuan\Winxuan.WebApi\bin\Winxuan.File.dll
 D:\MySpace\winxuan\Winxuan.WebApi\bin\Winxuan.Infrastructure.dll
 D:\MySpace\winxuan\Winxuan.WebApi\bin\Winxuan.Server.dll
 D:\MySpace\winxuan\Winxuan.WebApi\bin\Winxuan.Service.dll
 D:\MySpace\winxuan\Winxuan.WebApi\bin\Winxuan.Data.pdb
-D:\MySpace\winxuan\Winxuan.WebApi\bin\Winxuan.File.pdb
 D:\MySpace\winxuan\Winxuan.WebApi\bin\Winxuan.Infrastructure.pdb
 D:\MySpace\winxuan\Winxuan.WebApi\bin\Winxuan.Server.pdb
 D:\MySpace\winxuan\Winxuan.WebApi\bin\Winxuan.Service.pdb
@@ -166,3 +164,5 @@ D:\MySpace\winxuan\Winxuan.WebApi\bin\zh-Hant\System.Spatial.resources.dll
 D:\MySpace\winxuan\Winxuan.WebApi\obj\Debug\Winxuan.WebApi.csprojResolveAssemblyReference.cache
 D:\MySpace\winxuan\Winxuan.WebApi\obj\Debug\Winxuan.WebApi.dll
 D:\MySpace\winxuan\Winxuan.WebApi\obj\Debug\Winxuan.WebApi.pdb
+D:\MySpace\winxuan\Winxuan.WebApi\bin\Winxuan.Files.dll
+D:\MySpace\winxuan\Winxuan.WebApi\bin\Winxuan.Files.pdb

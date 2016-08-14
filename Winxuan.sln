@@ -21,7 +21,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Winxuan.Client", "Winxuan.C
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{24D38ED6-C960-43D7-8A30-3733776D41C6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Winxuan.File", "Winxuan.File\Winxuan.File.csproj", "{67262D9E-594A-4A34-8B62-7B7F69650144}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Winxuan.Files", "Winxuan.File\Winxuan.Files.csproj", "{67262D9E-594A-4A34-8B62-7B7F69650144}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Winxuan.Data", "Winxuan.Data\Winxuan.Data.csproj", "{AFA45B75-C83D-49BB-8108-7D8B2D965352}"
 EndProject

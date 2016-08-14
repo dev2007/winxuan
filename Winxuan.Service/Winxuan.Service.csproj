@@ -70,9 +70,9 @@
       <Project>{afa45b75-c83d-49bb-8108-7d8b2d965352}</Project>
       <Name>Winxuan.Data</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Winxuan.File\Winxuan.File.csproj">
+    <ProjectReference Include="..\Winxuan.File\Winxuan.Files.csproj">
       <Project>{67262d9e-594a-4a34-8b62-7b7f69650144}</Project>
-      <Name>Winxuan.File</Name>
+      <Name>Winxuan.Files</Name>
     </ProjectReference>
     <ProjectReference Include="..\Winxuan.Infrastructure\Winxuan.Infrastructure.csproj">
       <Project>{ae2112ac-8b37-4dec-bdb2-69cfac40e92e}</Project>

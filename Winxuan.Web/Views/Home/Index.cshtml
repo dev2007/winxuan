@@ -17,98 +17,16 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrapjs")
     @Styles.Render("~/Content/bootstrap")
-    <style type="text/css">
-        /* Sticky footer styles
-        -------------------------------------------------- */
-        html {
-            position: relative;
-            min-height: 100%;
-        }
-
-        body {
-            /* Margin bottom by footer height */
-            margin-bottom: 60px;
-        }
-
-        .footer {
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            /* Set the fixed height of the footer here */
-            height: 60px;
-            background-color: #f5f5f5;
-        }
-
-        /* Custom page CSS
-        -------------------------------------------------- */
-        /* Not required for template or sticky footer method. */
-
-        body > .container {
-            padding: 60px 15px 0;
-        }
-
-        .container .text-muted {
-            margin: 20px 0;
-        }
-
-        .footer > .container {
-            padding-right: 15px;
-            padding-left: 15px;
-        }
-
-        code {
-            font-size: 80%;
-        }
-    </style>
+    <link type="text/css" rel="stylesheet" href="@Url.Content("~/Content/Basic/Basic.css")"/>
+    <script src="@Url.Content("~/Scripts/Basic.js")"></script>
     <script type="text/javascript">
         $(document).ready(function () {
             @if(Model == null){
                 <text>$("#dashboard").hide(); $("#name").hide();</text>
             }else{
-                <text>$("#loginform").hide(); $("#forgetpwd").hide(); loadTeam();</text>
+                <text>$("#loginform").hide(); $("#forgetpwd").hide(); Basic.loadTeam();</text>
             }
-
-            //login
-            $("#loginbtn").on("click", function () {
-                var userName = $("#username").val();
-                var password = $("#password").val();
-                if (userName == "") {
-                    $("#loginbtn").focus();
-                    alert("请输入用户名");
-                    return;
-                } else if (password == "") {
-                    $("#password").focus();
-                    alert("请输入密码");
-                    return;
-                }
-                $.post("/Home/Login", { username: userName, password: password }, function (result) {
-                    var v = eval(result);
-                    if (!v.Status) {
-                        alert(v.ErrorMsg);
-                    } else {
-                        //TODO
-                        $("#loginform").hide();
-                        $("#forgetpwd").hide();
-                        $("#dashboard").show();
-                        $("#name").show();
-                        $("#name").text(v.Data.Name);
-                        loadTeam();
-                    }
-                });
-            });
-
-            //registe
-            $("#registe").on("click", function () {
-                window.location.href = "/Home/Registe";
-            });
         });
-
-        //load user's team information.
-        var loadTeam = function () {
-            $.get("/Team/List", function (result) {
-                $("#body").html(result);
-            });
-        };
     </script>
 </head>
 <body>

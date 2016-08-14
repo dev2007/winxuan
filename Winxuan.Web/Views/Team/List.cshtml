@@ -9,6 +9,9 @@
         text-overflow: ellipsis;
     }
 </style>
+<link type="text/css" rel="stylesheet" href="@Url.Content("~/Content/webuploader/webuploader.css")" />
+<script src="@Url.Content("~/Scripts/Team.js")"></script>
+<script src="@Url.Content("~/Scripts/webuploader/webuploader.min.js")"></script>
 
 <div class="row show-grid">
     <div class="col-lg-6">
@@ -23,21 +26,52 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach (var data in Model)
+                @if (Model != null)
                 {
-                    <tr>
-                        <td><div class="hidMsgInfo" title="@data.TeamName">@data.TeamName</div></td>
-                        <td><div class="hidMsgInfo" title="@data.TeamDescription">@data.TeamDescription</div></td>
-                        <td><div class="hidMsgInfo" title="@data.TeamDescription">@data.RoleDescription</div></td>
-                        <td><button class="btn btn-info">查看</button></td>
-                    </tr>
+                    foreach (var data in Model)
+                    {
+                        <tr>
+                            <td><div class="hidMsgInfo" title="@data.TeamName">@data.TeamName</div></td>
+                            <td><div class="hidMsgInfo" title="@data.TeamDescription">@data.TeamDescription</div></td>
+                            <td><div class="hidMsgInfo" title="@data.TeamDescription">@data.RoleDescription</div></td>
+                            <td><button class="btn btn-info" onclick="Team.FileList(@data.TeamId)">查看</button></td>
+                        </tr>
+                    }
                 }
             </tbody>
         </table>
 
     </div>
-    <div class="col-lg-6">
-        @Html.Partial("PartFileList")
+    <div class="col-lg-6" id="fileList">
+        @if (Model != null)
+        {
+            <input type="hidden" id="teamid" value="@ViewBag.TeamId"/>
+            <table class="table table-striped">
+                <caption>@ViewBag.TeamName</caption>
+                <thead>
+                    <tr>
+                        <th>文件名称</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (ViewBag.FileList != null)
+                {
+                    foreach (var data in ViewBag.FileList)
+                    {
+                <tr>
+                    <td><div class="hidMsgInfo" title="@data.TeamName">@data.TeamName</div></td>
+                    <td><button class="btn btn-info">下载</button></td>
+                </tr>
+                    }
+                }
+                </tbody>
+            </table>
+            <div class="btns" style="margin-top:100px;">
+                <div id="thelist" class="uploader-list"></div>
+                <div id="picker" class="btn">选择文件</div>
+                <button type="button" class="btn btn-default" id="btnUploader">上传</button>
+            </div>
+        }
     </div>
 </div>
-

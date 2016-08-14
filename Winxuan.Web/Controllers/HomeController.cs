@@ -26,10 +26,23 @@ namespace Winxuan.Web.Controllers
                     return View();
 
                 if (!string.IsNullOrEmpty(result.Data.AuthToken))
+                {
+                    Session["userid"] = result.Data.ID;
+                    Session["UserData"] = result.Data;
                     return View(new UserViewModel { ID = result.Data.ID, Name = result.Data.Name });
+                }
+                    
                 return View();
             }
             return View();
+        }
+
+        public ActionResult CurrentUser()
+        {
+            if (Session["UserData"] == null)
+                return Json(new JsonMsg() { Status = false,Msg = "需要重新登录"});
+            var user = Session["UserData"] as LoginUserInfo;
+            return Json(new JsonMsg() { Status = true, Data = user });
         }
 
         /// <summary>
@@ -63,9 +76,15 @@ namespace Winxuan.Web.Controllers
             {
                 ResponseJson<object> responseJson = WebUtils.Post<object>(string.Format("{0}/{1}", ApiServer, "api/logout"), new LogoutDTO() { AuthoToken = cookie }, cookie);
                 if (responseJson.Status)
+                {
+                    Session["userid"] = null;
+                    Session["UserData"] = null;
                     return RedirectToAction("Index", "Home");
+                }
+                    
             }
-
+            Session["userid"] = null;
+            Session["UserData"] = null;
             return RedirectToAction("Index", "Home");
         }
 
@@ -101,6 +120,11 @@ namespace Winxuan.Web.Controllers
             return View();
         }
 
+        [HttpGet]
+        public ActionResult PartMain()
+        {
+            return PartialView("PartialMain");
+        }
 
         /// <summary>
         /// Login function.

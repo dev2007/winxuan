@@ -10,49 +10,13 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrapjs")
     @Styles.Render("~/Content/bootstrap")
-    <style type="text/css">
-                /* Sticky footer styles
-        -------------------------------------------------- */
-                html {
-                    position: relative;
-                    min-height: 100%;
-                }
-
-                body {
-                    /* Margin bottom by footer height */
-                    margin-bottom: 60px;
-                }
-
-                .footer {
-                    position: absolute;
-                    bottom: 0;
-                    width: 100%;
-                    /* Set the fixed height of the footer here */
-                    height: 60px;
-                    background-color: #f5f5f5;
-                }
-
-                /* Custom page CSS
-        -------------------------------------------------- */
-                /* Not required for template or sticky footer method. */
-
-                body > .container {
-                    padding: 60px 15px 0;
-                }
-
-                .container .text-muted {
-                    margin: 20px 0;
-                }
-
-                .footer > .container {
-                    padding-right: 15px;
-                    padding-left: 15px;
-                }
-
-                code {
-                    font-size: 80%;
-                }
-    </style>
+    <link href="@Url.Content("~/Content/Basic/Basic.css")" type="text/css" rel="stylesheet" />
+    <script src="@Url.Content("~/Scripts/Basic.js")"></script>
+    <script>
+        $(function () {
+            Basic.CheckUser();
+        });
+    </script>
 </head>
 <body>
     <!--navgation bar-->
@@ -67,18 +31,21 @@
                 </button>
                 <a class="navbar-brand" href="/">组文件</a>
             </div>
-            @*<div id="navbar" class="navbar-collapse collapse">
+            <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#" class="invisible">个人中心</a></li>
-                    <li><a href="#">帮&nbsp;&nbsp;助</a></li>
+                    @*<!--后一版本增加邮箱后提供忘记密码功能--><li><a href="/Home/FindPwd" id="forgetpwd">忘记密码</a></li>*@
+                    <li><a href="javascript:;" id="name"></a></li>
+                    <li class="dropdown" id="dashboard">
+                        <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">个人中心 <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="javascript:;">修改密码</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="/Home/Logout">注销登录</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="javascript:;">帮&nbsp;&nbsp;助</a></li>
                 </ul>
-                <form class="navbar-form navbar-right">
-                    <input type="text" class="form-control" placeholder="用户名">
-                    <input type="password" class="form-control" placeholder="密码">
-                    <button type="button" class="btn btn-default">登&nbsp;&nbsp;录</button>
-                    <button type="button" class="btn btn-success">注&nbsp;&nbsp;册</button>
-                </form>
-            </div>*@
+            </div>
         </div>
     </nav>
     <!--body content-->

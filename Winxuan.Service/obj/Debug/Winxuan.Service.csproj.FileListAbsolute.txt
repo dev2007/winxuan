@@ -29,11 +29,9 @@ D:\MySpace\winxuan\Winxuan.Service\bin\Debug\EntityFramework.dll
 D:\MySpace\winxuan\Winxuan.Service\bin\Debug\EntityFramework.SqlServer.dll
 D:\MySpace\winxuan\Winxuan.Service\bin\Debug\Newtonsoft.Json.dll
 D:\MySpace\winxuan\Winxuan.Service\bin\Debug\Winxuan.Data.dll
-D:\MySpace\winxuan\Winxuan.Service\bin\Debug\Winxuan.File.dll
 D:\MySpace\winxuan\Winxuan.Service\bin\Debug\Winxuan.Infrastructure.dll
 D:\MySpace\winxuan\Winxuan.Service\bin\Debug\Winxuan.Server.dll
 D:\MySpace\winxuan\Winxuan.Service\bin\Debug\Winxuan.Data.pdb
-D:\MySpace\winxuan\Winxuan.Service\bin\Debug\Winxuan.File.pdb
 D:\MySpace\winxuan\Winxuan.Service\bin\Debug\Winxuan.Infrastructure.pdb
 D:\MySpace\winxuan\Winxuan.Service\bin\Debug\Winxuan.Server.pdb
 D:\MySpace\winxuan\Winxuan.Service\bin\Debug\EntityFramework.xml
@@ -42,3 +40,5 @@ D:\MySpace\winxuan\Winxuan.Service\bin\Debug\Newtonsoft.Json.xml
 D:\MySpace\winxuan\Winxuan.Service\obj\Debug\Winxuan.Service.csprojResolveAssemblyReference.cache
 D:\MySpace\winxuan\Winxuan.Service\obj\Debug\Winxuan.Service.dll
 D:\MySpace\winxuan\Winxuan.Service\obj\Debug\Winxuan.Service.pdb
+D:\MySpace\winxuan\Winxuan.Service\bin\Debug\Winxuan.Files.dll
+D:\MySpace\winxuan\Winxuan.Service\bin\Debug\Winxuan.Files.pdb

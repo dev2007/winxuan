@@ -4,13 +4,13 @@ using System.Configuration;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Winxuan.Infrastructure;
 
 namespace Winxuan.Web.Controllers
 {
     public class BaseController : Controller
     {
-        protected readonly static string ApiServer = ConfigurationManager.AppSettings["ApiServer"].ToString();
-
+        protected readonly static string ApiServer = "http://localhost:64181";//ConfigurationManager.AppSettings["ApiServer"].ToString();
         public BaseController()
         {
         }

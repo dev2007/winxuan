@@ -25,8 +25,14 @@ namespace Winxuan.Infrastructure
         /// <returns></returns>
         public static ResponseJson<T> Get<T>(string url, string authToken) where T : class
         {
-            string result = BaseReq(url, HttpMethod.GET,authToken:authToken);
-            return WebUtils.DeserializeObject<T>(ProcessResponseJson(result));
+            try
+            {
+                string result = BaseReq(url, HttpMethod.GET, authToken: authToken);
+                return WebUtils.DeserializeObject<T>(ProcessResponseJson(result));
+            }catch
+            {
+                return new ResponseJson<T>() { Status = false, Data = null };
+            }
         }
 
         /// <summary>
